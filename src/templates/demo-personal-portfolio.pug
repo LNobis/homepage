@@ -1,0 +1,279 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['tiny-slider/dist/tiny-slider.css']
+  - var vendorScripts = ['tiny-slider/dist/min/tiny-slider.js', 'imagesloaded/imagesloaded.pkgd.min.js', 'shufflejs/dist/shuffle.min.js', 'parallax-js/dist/parallax.min.js']
+  - var parentMenu = 'Demos'
+  - var pageTitle = 'Personal Portfolio'
+
+
+//- Navbar + Contact modal
+block navbar
+
+  // Contact modal (Hire me)
+  #modal-contact.modal.fade(tabindex='-1')
+    .modal-dialog.modal-dialog-centered
+      .modal-content
+        .modal-header.mb-1
+          h4.modal-title What project are you looking for?
+          button(type='button' class='close' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true') &times;
+        form(novalidate).modal-body.needs-validation.py-4
+          .btn-group-toggle.mb-3(data-toggle='buttons')
+            label.btn.btn-outline-primary.mr-2.mb-2.active
+              input(type='radio' name='services' id='illustration' checked)
+              | Illustration
+            label.btn.btn-outline-primary.mr-2.mb-2
+              input(type='radio' name='services' id='packaging')
+              | Packaging
+            label.btn.btn-outline-primary.mr-2.mb-2
+              input(type='radio' name='services' id='branding')
+              | Branding
+          .input-group-overlay.form-group
+            .input-group-prepend-overlay
+              span.input-group-text
+                i.fe-user
+            input(type='text' placeholder='Name' required).form-control.prepended-form-control
+          .input-group-overlay.form-group
+            .input-group-prepend-overlay
+              span.input-group-text
+                i.fe-mail
+            input(type='email' placeholder='Email' required).form-control.prepended-form-control
+          .form-group
+            textarea(rows='4' placeholder='Project description' required).form-control
+          .row.py-2
+            .col-lg-6.col-md-8
+              button(type='submit').btn.btn-primary.btn-block Send Request
+
+
+  // Navbar (Solid background + shadow)
+  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+  header.cs-header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
+    .navbar-search.bg-light
+      .container.d-flex.flex-nowrap.align-items-center
+        i.fe-search.font-size-xl
+        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
+        .d-flex.align-items-center
+          span.text-muted.font-size-xs.mt-1.d-none.d-sm-inline Close
+          button(type='button' data-toggle='search').close.p-2 &times;
+    .container.px-0.px-xl-3
+      button(type='button' data-toggle='offcanvas' data-offcanvas-id='primaryMenu').navbar-toggler.ml-n2.mr-4
+        span.navbar-toggler-icon
+      a(href='index.html').navbar-brand.order-lg-1.mx-auto.ml-lg-0.pr-lg-2.mr-lg-4
+        +image('logo/logo-dark.png', 'Around')(width='153').d-none.d-lg-block
+        +image('logo/logo-icon.png', 'Around')(width='58').d-lg-none
+      .d-flex.align-items-center.order-lg-3.ml-lg-auto
+        a(href='#modal-contact' data-toggle='modal').btn.btn-primary.d-lg-inline-block.d-none Hire me
+        a(href='#modal-contact' data-toggle='modal').btn.btn-sm.btn-primary.d-lg-none.d-inline-block Hire me
+      #primaryMenu.cs-offcanvas-collapse.order-lg-2
+        .cs-offcanvas-cap.navbar-box-shadow
+          h5.mt-1.mb-0 Menu
+          button(type='button' data-toggle='offcanvas' data-offcanvas-id='primaryMenu').close.lead
+            span(aria-hidden='true') &times;
+        .cs-offcanvas-body
+          //- partial/menu-primary
+          include partials/menu-primary
+        .cs-offcanvas-cap
+          a(href='#modal-contact' data-toggle='modal').btn.btn-block.btn-primary Hire me
+
+
+//- Page Content
+block content
+
+  // Hero
+  section.container.mb-3.my-md-0.py-5.py-md-6
+    .row.align-items-center
+      .col-lg-4.col-md-5.order-md-1.order-2.text-md-left.text-center
+        h1.display-4.mb-lg-4.mb-3 Hey, I’m Alex
+        h2.mb-lg-5.mb-4.text-muted Graphic Designer &amp; Illustrator
+        .text-nowrap
+          a(href='#').btn.btn-translucent-primary.mr-3
+            i.fe-arrow-down-circle.mt-n1.mr-2
+            | Download CV
+          a(href='#portfolio' data-scroll).btn.btn-outline-primary Portfolio
+      .col-lg-8.col-md-7.order-md-2.order-1.mb-md-0.mb-grid-gutter
+        +image('demo/personal-portfolio/hero-illustration.svg', 'Illustration')
+
+
+  // Services
+  section.bg-faded-primary.position-relative.py-md-7.py-5
+    .container.my-2.my-md-0
+      .row.align-items-center
+        .col-md-5.mb-md-0.mb-5.pb-md-0.pb-3
+          +image('demo/personal-portfolio/services/illustration.svg', 'Illustration').d-block.mx-md-0.mx-auto
+        .col-lg-6.offset-lg-1.col-md-7.text-md-left.text-center
+          div(style='max-width: 500px;').mx-md-0.mx-auto
+            h2.mb-md-5.mb-4 What I do best
+
+            // Media item (Service)
+            .media.d-md-flex.d-block.mb-4.pb-2
+              +image('demo/personal-portfolio/services/01.svg', 'Icon').mr-md-4.mb-md-0.mb-4
+              .media-body.pl-md-2
+                h3.h6.mb-2 Creative illustrations
+                p.mb-0.font-size-sm At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis voluptatum deleniti atque.
+
+            // Media item (Service)
+            .media.d-md-flex.d-block.mb-4.pb-2
+              +image('demo/personal-portfolio/services/02.svg', 'Icon').mr-md-4.mb-md-0.mb-4
+              .media-body.pl-md-2
+                h3.h6.mb-2 Graphic identity and branding
+                p.mb-0.font-size-sm Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia occaecati cupiditate non provident.
+
+            // Media item (Service)
+            .media.d-md-flex.d-block
+              +image('demo/personal-portfolio/services/03.svg', 'Icon').mr-md-4.mb-md-0.mb-4
+              .media-body.pl-md-2
+                h3.h6.mb-2 Graphic Packaging Design
+                p.mb-0.font-size-sm Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+    .cs-shape.cs-shape-top.cs-shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 3000 185.4')
+        path(fill='currentColor', d='M3000,185.4V0H0v185.4C496.4,69.8,996.4,12,1500,12S2503.6,69.8,3000,185.4z')
+
+
+  // Portfolio
+  section#portfolio.overflow-hidden
+    .container.py-lg-7.py-md-6.py-5.my-2.my-md-0
+      h2.mb-3.text-center My portfolio
+      p.mb-4.pb-md-2.text-muted.text-center Most recent projects I have completed
+
+      .cs-masonry-filterable
+      
+        // Portfolio nav (Filters)
+        nav(data-simplebar data-simplebar-auto-hide='false').pb-3.mb-4
+          ul.cs-masonry-filters.nav.nav-tabs.justify-content-sm-center.flex-nowrap.text-nowrap.mb-0
+            li.nav-item
+              a(href='#' class='nav-link active' data-group='all') All
+            li.nav-item
+              a(href='#' class='nav-link' data-group='illustrations') Illustrations
+            li.nav-item
+              a(href='#' class='nav-link' data-group='packaging') Packaging
+            li.nav-item
+              a(href='#' class='nav-link' data-group='branding') Branding
+
+        // Portfolio grid
+        .cs-masonry-grid(data-columns='3')
+
+          // Portfolio item
+          article.cs-grid-item(data-groups='["branding"]')
+            a(href='#').card.card-hover.h-100.border-0.box-shadow
+              +image('demo/personal-portfolio/portfolio/01.jpg', 'Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 Apologetic robot holding flowers
+                span.font-size-sm.text-muted Branding
+
+          // Portfolio item
+          article.cs-grid-item(data-groups='["illustrations"]')
+            a(href='#').card.card-hover.h-100.border-0.box-shadow
+              +image('demo/personal-portfolio/portfolio/02.jpg', 'Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 Woman walking her small dog
+                span.font-size-sm.text-muted Illustrations
+
+          // Portfolio item
+          article.cs-grid-item(data-groups='["branding"]')
+            a(href='#').card.card-hover.h-100.border-0.box-shadow
+              +image('demo/personal-portfolio/portfolio/03.jpg', 'Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 Oil bottle branding
+                span.font-size-sm.text-muted Branding
+
+          // Portfolio item
+          article.cs-grid-item(data-groups='["illustrations"]')
+            a(href='#').card.card-hover.h-100.border-0.box-shadow
+              +image('demo/personal-portfolio/portfolio/04.jpg', 'Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 Smiling woman
+                span.font-size-sm.text-muted Illustrations
+
+          // Portfolio item
+          article.cs-grid-item(data-groups='["packaging"]')
+            a(href='#').card.card-hover.h-100.border-0.box-shadow
+              +image('demo/personal-portfolio/portfolio/05.jpg', 'Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 Drink can design
+                span.font-size-sm.text-muted Packaging
+
+          // Portfolio item
+          article.cs-grid-item(data-groups='["illustrations"]')
+            a(href='#').card.card-hover.h-100.border-0.box-shadow
+              +image('demo/personal-portfolio/portfolio/06.jpg', 'Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 I love you hand gesture
+                span.font-size-sm.text-muted Illustrations
+
+      .pt-3.text-center
+        a(href='#').btn.btn-primary
+          i.fe-refresh-cw.mr-2
+          | Load more
+
+
+  // Testimonials
+  section.bg-faded-primary.position-relative.py-md-7.py-5
+    .container
+      .row
+        .col-lg-6.col-md-7.order-md-1.order-2
+
+          // Carousel
+          .cs-carousel
+            .cs-carousel-inner(data-carousel-options = '{"gutter": 20, "responsive": {"0": {"nav": true, "controls": false}, "991": {"nav": false, "controls": true}}}')
+
+              // Carousel item
+              blockquote.blockquote.mt-3.mb-0
+                p Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dignissimos ducimus qui blanditiis praesentium voluptatum facere officia ratione quos esse corporis cum.
+                p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis voluptatum deleniti atque.
+                footer.media.align-items-center
+                  +image('demo/personal-portfolio/testimonials/01.jpg', 'Tim Brooks')(width='42').rounded-circle
+                  .media-body.text-heading.font-size-md.font-weight-medium.pl-2.ml-1
+                    | Tim Brooks
+              
+              // Carousel item
+              blockquote.blockquote.mt-3.mb-0
+                p Consectetur adipisicing elit. Minus facilis asperiores deleniti ipsum quod ipsa voluptate dicta quasi. Dignissimos accusantium temporibus sunt culpa minima, earum reprehenderit aspernatur inventore magnam labore.
+                p Velit modi neque placeat consequatur voluptatibus odit aut iste dolorum dolorem magnam.
+                footer.media.align-items-center
+                  +image('demo/personal-portfolio/testimonials/02.jpg', 'Tim Brooks')(width='42').rounded-circle
+                  .media-body.text-heading.font-size-md.font-weight-medium.pl-2.ml-1
+                    | Serenity Edwards
+
+        .col-md-5.offset-lg-1.order-md-2.order-1.mb-md-0.mb-grid-gutter
+          +image('demo/personal-portfolio/testimonials/illustration.svg', 'Illustration').d-block.mx-md-0.mx-auto
+    .cs-shape.cs-shape-bottom.cs-shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3000 185.4')
+        path(fill='currentColor' d='M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z')
+
+
+  // Socials
+  section(style='background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);').position-relative.py-6.bg-no-repeat.bg-position-center-bottom.overflow-hidden
+
+    // Parallax
+    .cs-parallax
+      .cs-parallax-layer(data-depth='0.1')
+        +image('demo/personal-portfolio/socials/figure-1.png', 'Layer 1')
+      .cs-parallax-layer(data-depth='0.15')
+        +image('demo/personal-portfolio/socials/figure-2.png', 'Layer 2')
+      .cs-parallax-layer(data-depth='0.25')
+        +image('demo/personal-portfolio/socials/figure-3.png', 'Layer 3')
+
+    // Content
+    div(style='top: 0; left: 0; z-index: 9').d-flex.align-items-center.position-absolute.w-100.h-100
+      .container
+        h2.mb-4.pb-sm-3.text-center Follow me
+        .text-center
+          a(href='#' style='background-color: #ea4c89;').btn.btn-lg.text-white.mb-2.mr-sm-4.mr-2
+            i.fe-dribbble.lead.mr-2
+            | Dribbble
+          a(href='#' style='background-color: #1969ff').btn.btn-lg.text-white.mb-2
+            i.fe-behance.lead.mr-2
+            | Behance
+
+
+//- Footer
+block footer
+
+  // Footer
+  footer.cs-footer.pb-4.mt-sm-n5
+    .container.font-size-sm.text-center
+      span.text-muted © All rights reserved. Made by 
+      a(href='https://createx.studio/' target='_blank' rel='noopener').nav-link-style Createx Studio

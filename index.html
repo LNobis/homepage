@@ -62,7 +62,7 @@
         font-size: 1rem;
         font-weight: normal;
         /*color: #737491;*/
-        color: #007069;
+        color: #000000;
       }
       .cs-page-spinner {
         display: inline-block;
@@ -108,11 +108,20 @@
     <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
     <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css"/>
     <link rel="stylesheet" media="screen" href="vendor/lightgallery.js/dist/css/lightgallery.min.css"/>
+
+    <link rel="stylesheet" media="screen" href="../vendor/prismjs/themes/prism.css"/>
+    <link rel="stylesheet" media="screen" href="../vendor/prismjs/plugins/toolbar/prism-toolbar.css"/>
+    <link rel="stylesheet" media="screen" href="../vendor/prismjs/plugins/line-numbers/prism-line-numbers.css"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" media="screen" href="css/theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" integrity="sha512-f8mUMCRNrJxPBDzPJx3n+Y5TC5xp6SmStstEfgsDXZJTcxBakoB5hvPLhAfJKa9rCvH+n3xpJ2vQByxLk4WP2g==" crossorigin="anonymous" />
   </head>
   <!-- Body-->
   <body>
+
     <!-- Page loading spinner-->
     <div class="cs-page-loading active">
       <div class="cs-page-loading-inner">
@@ -123,9 +132,11 @@
       <!-- Navbar (Solid background)-->
       <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
       <header class="cs-header navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-scroll-header>
-        <div class="container px-0 px-xl-3">
-          <button class="navbar-toggler ml-n2 mr-2" type="button" data-toggle="offcanvas" data-offcanvas-id="primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand order-lg-1 mx-auto ml-lg-0 pr-lg-2 mr-lg-4" href="index.html"><img class="d-none d-lg-block" width="153" src="img/logo/logo-dark.png" alt="Test"/><img class="d-lg-none" width="58" src="img/logo/logo-icon.png" alt="Test"/></a>
-          <div class="d-flex align-items-center order-lg-3 ml-lg-auto"><a class="nav-link-style font-size-sm text-nowrap" href="#modal-signin" data-toggle="modal" data-view="#modal-signin-view"><i class="fe-user font-size-xl mr-2"></i>Sign in</a><a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="#modal-signin" data-toggle="modal" data-view="#modal-signup-view">Sign up</a></div>
+        <div class="container px-0 px-xl-1">
+          <button class="navbar-toggler ml-1 mr-2" type="button" data-toggle="offcanvas" data-offcanvas-id="primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand order-lg-1 mx-auto ml-lg-0 pr-lg-2 mr-lg-4" href="index.html"><img class="d-none d-lg-block" width="70" src="img/logo/logo_website.pdf" alt="Logo"/><img class="d-lg-none" width="58" src="img/logo/logo_website.pdf" alt="Logo"/></a>
+          <div class="d-flex align-items-center order-lg-3 ml-lg-auto">
+                  <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block">Contact</a>
+                </div>
           <div class="cs-offcanvas-collapse order-lg-2" id="primaryMenu">
             <div class="cs-offcanvas-cap navbar-box-shadow">
               <h5 class="mt-1 mb-0">Menu</h5>
@@ -134,13 +145,11 @@
             <div class="cs-offcanvas-body">
               <!-- Menu-->
               <ul class="navbar-nav">
-                <li class="nav-item dropdown dropdown-mega active"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
+                <li class="nav-item dropdown dropdown-mega active"><a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item dropdown dropdown-mega active"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">CV</a>
+                <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#">CV</a>
                 </li>
-                <li class="nav-item dropdown dropdown-mega"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Publications</a>
-                </li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
+                <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#publications">Publications</a>
                 </li>
               </ul>
             </div>
@@ -154,7 +163,7 @@
           <div class="col-lg-6 col-md-7 text-right order-md-2"><img class="d-inline-block" width="525" src="img/demo/business-consulting/hero-img.pdf" alt="Business people"/>
           </div>
           <div class="col-lg-6 col-md-5 pt-5 pb-3 py-md-5">
-            <div class="mx-auto mr-md-5 mr-xl-7 pl-7 py-md-3 order-md-1" style="max-width: 516px;">
+            <div class="mx-auto mr-md-5 mr-xl-7 pl-3 py-md-3 order-md-1" style="max-width: 516px;">
               <h1 class="mb-grid-gutter pb-1"><span style="font-weight:normal">Lisa</span> Nobis</h1>
               <p class="cs-callout d-block d-md-none d-lg-block font-size-lg text-muted mb-grid-gutter">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
               <div class="pt-2"><a class="cs-video-btn cs-video-btn-primary cs-video-btn-sm mr-3" href="https://www.youtube.com/watch?v=hTu0a4o97dU" data-sub-html="&lt;h6 class=&quot;font-size-sm text-light&quot;&gt;Around Consulting&lt;/h6&gt;"></a><span class="font-size-sm">Get to know us better</span></div>
@@ -164,21 +173,23 @@
       </section>
       <!-- CTA-->
       <section class="bg-secondary bg-size-cover py-5 py-md-6" style="background-image: url(img/demo/business-consulting/cta-bg.pdf);">
-        <div class="container py-3 py-md-0">
+        <div class="container pt-3 py-4 py-md-3">
           <div class="row align-items-center">
-            <div class="col-lg-5 col-md-6 text-center text-md-left">
-              <h2 class="mb-4 pb-3 pb-md-0 pl-7 mb-md-0">Get in touch</h2>
+            <div class="col-sm">
+                <a class="btn btn-large btn-social-icon btn-github">
+                    <span class="fa fa-github"></span>
+                  </a>
             </div>
-            <div class="col-lg-7 col-md-6">
-              <form class="row needs-validation" novalidate>
-                <div class="col-sm-7 col-md-12 col-lg-7 mb-3 mb-lg-0">
-                  <input class="form-control" type="email" placeholder="Your email" required>
-                  <div class="invalid-feedback">Please provide a valid email address!</div>
-                </div>
-                <div class="col-sm-5 col-md-12 col-lg-5">
-                  <button class="btn btn-primary btn-block" type="submit">Send</button>
-                </div>
-              </form>
+            <div class="col-lg-2"><h3 class="ml-3">GitHub</h3></div>
+            <div class="col-lg-3">
+                <button class="btn btn-primary btn-block" type="submit">University of Oxford</button>
+            </div>
+            <div class="col-lg-3">
+                <button class="btn btn-primary btn-block" type="submit">LinkedIn</button>
+              </div>
+              <div class="col-lg-3">
+                <button class="btn btn-primary btn-block" type="submit">Cognitive Neurology Group</button>
+              </div>
             </div>
           </div>
         </div>
@@ -186,34 +197,34 @@
       <!-- Services-->
       <section class="container py-5 py-md-6 py-lg-7 my-3">
         <div class="row align-items-center">
-          <div class="col-lg-4 col-md-5 pl-7 text-center text-md-left mb-5 mb-md-0">
-            <h2 class="mb-3 pl-3">My interests</h2>
-            <p class="text-muted mb-4 pb-2 pl-3">Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint doloremque.</p>
+          <div class="col-lg-4 col-md-5 pl-3 text-center text-md-left mb-5 mb-md-0">
+            <h2 class="mb-3">My interests</h2>
+            <p class="text-muted mb-4 pb-2">Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint doloremque.</p>
           </div>
           <div class="col-lg-8 col-md-7 bg-position-center bg-no-repeat" style="background-image: url(img/demo/business-consulting/services/bg-shape.svg);">
             <div class="mx-auto" style="max-width: 610px;">
               <div class="row align-items-center">
                 <div class="col-sm-6">
                   <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/01.svg" alt="Icon"/>
-                    <h3 class="h5 mb-2">Strategy &amp; Innovation</h3>
+                    <h3 class="h5 mb-2">Decision-making</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
                   <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/02.svg" alt="Icon"/>
-                    <h3 class="h5 mb-2">HR &amp; Talent</h3>
+                    <h3 class="h5 mb-2">Mood disorders</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
                   <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/03.svg" alt="Icon"/>
-                    <h3 class="h5 mb-2">Training &amp; Cetrification</h3>
+                    <h3 class="h5 mb-2">Global priorities</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/04.svg" alt="Icon"/>
-                    <h3 class="h5 mb-2">Advanced Analytics</h3>
+                    <h3 class="h5 mb-2">Data analysis</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
                   <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/05.svg" alt="Icon"/>
-                    <h3 class="h5 mb-2">Sales &amp; Marketing</h3>
+                    <h3 class="h5 mb-2">Brain computer interface</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
                 </div>
@@ -227,37 +238,39 @@
         <div class="container py-2">
           <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8 col-sm-10 text-center">
-              <h2>Publications</h2>
+              <h2><a id="publications"> Publications </a> </h2>
               <p class="text-muted mb-5 pb-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/01.jpg" alt="Life Science"/>
+            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/apAD.pdf" alt="Life Science"/>
                 <div class="card-body">
-                  <h3 class="h5 mb-0">Life Science</h3>
+                  <h3 class="h5 mb-0">
+                    Nobis, L., <span style="font-weight:normal"> &amp; Husain, M. (2021). </span> Treatment and pharmacology of apathy. <span style="font-weight:normal">In Aleman, A &amp; Lanctot, K. (Ed). Apathy: Clinical and Neuroscientific Perspectives from Neurology and Psychiatry. Oxford, UK: Oxford University Press. IN PRESS.</span></h3>
                 </div></a></div>
-            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/02.jpg" alt="Technology"/>
+            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/subhipp_fig.pdf" alt="Technology"/>
                 <div class="card-body">
-                  <h3 class="h5 mb-0">Technology</h3>
+                  <h3 class="h5 mb-0"><span style="font-weight:normal">Veldsman, M.*, </span>Nobis, L.*, <span style="font-weight:normal">Alfaro-Almagro, F., Manohar, S.G., Husain, M. (2020). </span>The human hippocampus and its subfield volumes across age, sex and APOE e4 status. <span style="font-weight:normal">Brain Communications. IN PRESS.</span></h3>
                 </div></a></div>
-            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/03.jpg" alt="Healthcare"/>
+            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/hipp_fig.pdf" alt="Healthcare"/>
                 <div class="card-body">
-                  <h3 class="h5 mb-0">Healthcare</h3>
+                  <h3 class="h5 mb-0"> Nobis, L., <span style="font-weight:normal"> Manohar, S.G., Smith, S.M., Alfaro-Almagro, F., Jenkinson, M., Mackay, C. E., Husain, M. (2019). </span> Hippocampal volume across age: Nomograms derived from over 19,700 people in UK Biobank. <span style="font-weight:normal">NeuroImage: Clinical.23: 101904</span></h3>
+                </h3>
                 </div></a></div>
-            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/04.jpg" alt="Natural Resources"/>
+            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/apAD2.pdf" alt="Natural Resources"/>
                 <div class="card-body">
-                  <h3 class="h5 mb-0">Natural Resources</h3>
+                  <h3 class="h5 mb-0">Nobis, L. <span style="font-weight:normal"> &amp; Husain, M. (2018). </span><span style="font-weight:normal"> Apathy in Alzheimer's Disease. </span>Current Opinion in Behavioral Sciences. 22:7-13</h3>
                 </div></a></div>
-            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/05.jpg" alt="Freight & Logistics"/>
+            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/rme.pdf" alt="Freight & Logistics"/>
                 <div class="card-body">
-                  <h3 class="h5 mb-0">Freight &amp; Logistics</h3>
+                  <h3 class="h5 mb-0">Nobis, L., <span style="font-weight:normal"> Schindlbeck, K., Ehlen, F., Duits, A., Klostermann, F. (2016).</span> Theory of Mind Performance in Parkinson’s Disease is Associated with Motor and Cognitive Functions, but not with Symptom Lateralization. <span style="font-weight:normal">Journal of Neural Transmission. 124: 1067-1072</span></h3>
                 </div></a></div>
-            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/06.jpg" alt="Retail"/>
+            <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/business-consulting/industries/fel.pdf" alt="Retail"/>
                 <div class="card-body">
-                  <h3 class="h5 mb-0">Retail</h3>
+                  <h3 class="h5 mb-0"><span style="font-weight:normal"> Ehlen, F., Schindlbeck, K., </span> Nobis, L., <span style="font-weight:normal">Maier, A., Klostermann, F. (2016).</span>Relationship between activity and well-being in people with Parkinson's disease. <span style="font-weight:normal">Brain and Behaviour. 8(5): 300976</span></h3>
                 </div></a></div>
           </div>
-          <div class="pt-3 text-center"><a class="btn btn-primary" href="#">Google scholar</a></div>
+          <div class="pt-3 text-center"><a class="btn btn-primary" href="https://scholar.google.com/citations?user=hnAXMlsAAAAJ&hl=de&oi=ao" target="_blank">Google scholar</a></div>
         </div>
       </section>
     </main>
@@ -283,6 +296,14 @@
     <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
     <script src="vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
     <script src="vendor/lg-video.js/dist/lg-video.min.js"></script>
+    <script src="vendor/prismjs/components/prism-core.min.js"></script>
+    <script src="vendor/prismjs/components/prism-markup.min.js"></script>
+    <script src="vendor/prismjs/components/prism-clike.min.js"></script>
+    <script src="vendor/prismjs/components/prism-javascript.min.js"></script>
+    <script src="vendor/prismjs/components/prism-pug.min.js"></script>
+    <script src="vendor/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="vendor/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="vendor/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <!-- Main theme script-->
     <script src="js/theme.min.js"></script>
   </body>

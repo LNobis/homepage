@@ -30,11 +30,11 @@
   <sodipodi:namedview
      inkscape:current-layer="cards"
      inkscape:window-maximized="0"
-     inkscape:window-y="23"
+     inkscape:window-y="106"
      inkscape:window-x="0"
-     inkscape:cy="237.48679"
-     inkscape:cx="531.69594"
-     inkscape:zoom="0.51999191"
+     inkscape:cy="196.97362"
+     inkscape:cx="758.25028"
+     inkscape:zoom="1.896222"
      showgrid="false"
      id="namedview1014"
      inkscape:window-height="717"
@@ -69,7 +69,7 @@
            transform="translate(344.000000, 0.000000)"
            id="cards">
           <path
-             style="fill:#00656e;fill-opacity:0.08627451"
+             style="fill:#ebf3f4;fill-opacity:1"
              transform="translate(511.500000, 457.000000) scale(-1, 1) rotate(26.000000) translate(-511.500000, -457.000000) "
              id="bg_shape"
              d="M515.309848,746 C686.570835,746 939,569.097151 939,397.913288 C939,226.729425 662.616982,168.098814 491.355995,168.098814 C320.095008,168.098814 84,158.457595 84,329.641459 C84,500.825322 344.048861,746 515.309848,746 Z" />
