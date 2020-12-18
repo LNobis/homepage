@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head profile="http://www.w3.org/2005/10/profile">
     <meta charset="utf-8">
     <title>Lisa Nobis | Website</title>
     <!-- SEO Meta Tags-->
@@ -10,10 +10,31 @@
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="icon.ico/favicon-16x16.png">
+    <!-- generics -->
+    <link rel="icon" href="favicos/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="favicos/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="favicos/favicon-57.png" sizes="57x57">
+    <link rel="icon" href="favicos/favicon-76.png" sizes="76x76">
+    <link rel="icon" href="favicos/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" href="favicos/favicon-128.png" sizes="128x128">
+    <link rel="icon" href="favicos/favicon-192.png" sizes="192x192">
+    <link rel="icon" href="favicos/favicon-228.png" sizes="228x228">
+
+    <!-- Android -->
+    <link rel="shortcut icon" sizes="196x196" href="favicos/favicon-196.png">
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="favicos/favicon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="favicos/favicon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="favicos/favicon-180x180.png" sizes="180x180">
+
+    <!-- Windows 8 IE 10-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="favicos/favicon-144x144.png">
+    <meta name="msapplication-config" content="favicos/browserconfig.xml" /> 
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="icon.ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+  
     <link rel="manifest" href="site.webmanifest">
     <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
@@ -132,6 +153,7 @@
       <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
       <header class="cs-header navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-scroll-header>
         <div class="container px-0 px-xl-1">
+          <button class="navbar-toggler ml-n2 mr-2" type="button" data-toggle="offcanvas" data-offcanvas-id="primaryMenu"><span class="navbar-toggler-icon"></span></button>
           <div class="d-flex align-items-center order-lg-3 ml-lg-auto">
               <a class="nav-link-style ml-grid-gutter d-none d-lg-inline-block"><i class="fa fa-twitter font-size-xl"></i></a>
               <a class="nav-link-style ml-grid-gutter d-none d-lg-inline-block"><i class="fa fa-github font-size-xl"></i></a>
@@ -147,9 +169,11 @@
               <ul class="navbar-nav align-items-center">
                 <li class="nav-item active mt-2"><a class="nav-link" href="#"><h3>LNOBIS</h3></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">CV</a>
+                <li class="nav-item"><a class="nav-link" href="#interests">MY INTERESTS</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#publications">PUBLICATIONS</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#CV">CV</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a>
                 </li>
@@ -162,7 +186,7 @@
       <!-- Hero-->
       <section class="container-fluid px-0 pb-5 pb-md-5">
         <div class="row no-gutters align-items-xl-center">
-          <div class="col-lg-6 col-md-7 text-right order-md-2"><img class="d-inline-block" width="525" src="img/demo/business-consulting/hero-img.pdf" alt="Business people"/>
+          <div class="col-lg-6 col-md-7 text-right order-md-2"><img class="d-inline-block" width="525" src="./img/demo/business-consulting/hero-img.svg" alt="profile picture"/>
           </div>
           <div class="col-lg-6 col-md-5 pt-5 pb-3 py-md-5">
             <div class="mx-auto mr-md-5 mr-xl-7 pl-3 py-md-3 order-md-1" style="max-width: 516px;">
@@ -172,52 +196,37 @@
           </div>
         </div>
       </section>
-      <!-- CTA-->
-      <section class="bg-secondary bg-size-cover py-1 py-md-6" style="background-image: url(img/demo/business-consulting/cta-bg.pdf);">
-
-          <!--  <div class="row vertical-align:center mx-auto">
-            <div class="col-sm text-center">
-                <a class="btn btn-large btn-social-icon btn-github d-inline-block"><span class="fa fa-github"> </span></a> <div> <h4 class="vertical-align:center pt-2">GitHub</h4></div></div>
-            <div class="col-sm text-center">
-              <a class="btn btn-large btn-social-icon btn-linkedin d-inline-block"><span class="fa fa-linkedin"> </span></a> <div class="vertical-align:center pt-2"> <h4>LinkedIn</h4></div></div>
-            <div class="col-sm text-center">
-              <a><img class="d-inline-block" src="logo2.png" width="33"/> </a> <div class="vertical-align:center pt"> <h4>University of Oxford</h4></div></div>
-            <div class="col-sm text-center">
-              <a><img class="d-inline-block" src="r16x9.png" width="40"/> </a> <div class="vertical-align:center pt"> <h4>Cognitive Neurology</h4></div></div>
-            </div>
-          </div>-->
-
-      </section>
-      <!-- Services-->
-      <section class="container py-5 py-md-6 py-lg-7 my-3">
+      <!-- Interests -->
+      <section id = interests  class="bg-secondary py-4 py-md-6 mt-2">
+      <div class="container py-3 py-md-3 py-lg-3 my-3">
         <div class="row align-items-center">
           <div class="col-lg-4 col-md-5 pl-3 text-center text-md-left mb-5 mb-md-0">
-            <h2 class="mb-3">My interests</h2>
+            <h1 class="mb-3"><span style="font-weight:normal">my</span>  interests</h1>
             <p class="mb-4 pb-2">Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint doloremque.</p>
           </div>
           <div class="col-lg-8 col-md-7 bg-position-center bg-no-repeat" style="background-image: url(img/demo/business-consulting/services/bg-shape.svg);">
             <div class="mx-auto" style="max-width: 610px;">
               <div class="row align-items-center">
                 <div class="col-sm-6">
-                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/01.svg" alt="Icon"/>
+                  <div class="bg-light box-shadow-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/01.svg" alt="Icon"/>
                     <h3 class="h5 mb-2">Decision-making</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
-                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/02.svg" alt="Icon"/>
+                  <div class="bg-light box-shadow-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/02.svg" alt="Icon"/>
                     <h3 class="h5 mb-2">Mood disorders</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
-                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/03.svg" alt="Icon"/>
+                  <div class="bg-light box-shadow-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/03.svg" alt="Icon"/>
                     <h3 class="h5 mb-2">Global priorities</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/04.svg" alt="Icon"/>
+                  <div class="bg-light box-shadow-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/04.svg" alt="Icon"/>
                     <h3 class="h5 mb-2">Data analysis</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
-                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/05.svg" alt="Icon"/>
+                  <div class="bg-light box-shadow-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/business-consulting/services/05.svg" alt="Icon"/>
                     <h3 class="h5 mb-2">Brain computer interface</h3>
                     <p class="font-size-sm">Find aute irure dolor in reprehend in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                   </div>
@@ -226,13 +235,14 @@
             </div>
           </div>
         </div>
+        </div>
       </section>
-      <!-- Industries-->
-      <section class="bg-secondary py-5 py-md-6 mt-n4">
+      <!-- Publications-->
+      <section id="publications" class="py-4 py-sm-5">
         <div class="container py-2">
           <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8 col-sm-10 text-center">
-              <h2><a id="publications"> Publications </a> </h2>
+              <h1><a > publications </a> </h1>
               <p class="mb-5 pb-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae</p>
             </div>
           </div>
@@ -274,6 +284,30 @@
           <div class="pt-3 text-center"><a class="btn btn-primary" href="https://scholar.google.com/citations?user=hnAXMlsAAAAJ&hl=de&oi=ao" target="_blank">Google scholar</a></div>
         </div>
       </section>
+
+      <!-- CV -->
+      <section id = CV  class="bg-secondary py-4 py-md-6 mt-2">
+        <div class="container py-3 py-md-3 py-lg-3 my-3">
+          <div class="row align-items-center">
+            <div class="col-lg-4 col-md-5 pl-3 text-center text-md-left mb-5 mb-md-0">
+              <h1 class="mb-3"><span style="font-weight:normal">my</span>  CV</h1>
+              <p class="mb-4 pb-2">Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint doloremque.</p>
+            </div>
+            </div>
+          </div>
+        </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-4 py-sm-5">
+        <div class="container py-2">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10 text-center">
+              <h1><a > contact </a> </h1>
+              <p class="mb-5 pb-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae</p>
+            </div>
+          </div>
+          </div>
+      </section>
     </main>
     <!-- Footer-->
     <footer class="cs-footer container">
@@ -283,7 +317,7 @@
             <li class="list-inline-item my-1"><a class="nav-link-style" href="#">Contact</a></li>
             <li class="list-inline-item my-1"><a class="nav-link-style" href="#">Impressum</a></li>
           </ul>
-          <p class="font-size-sm mb-0 mr-3 order-md-1"><span class="text-muted mr-1">Lisa Nobis, 2020</p>
+          <p class="font-size-sm mb-0 mr-3 order-md-1"><span class="mr-1">Lisa Nobis, 2020</p>
         </div>
       </div>
     </footer>
